@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+.menu-item-border {
+  width: 0;
+}
+
+.menu-item:hover .menu-item-border {
+  width: 100%;
+  transition: all 0.5s;
+}
