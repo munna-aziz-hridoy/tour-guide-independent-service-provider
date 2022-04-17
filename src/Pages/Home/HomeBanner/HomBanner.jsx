@@ -8,7 +8,7 @@ const HomBanner = () => {
   const navigate = useNavigate();
   return (
     <div className="banner flex flex-col lg:flex-row justify-between items-center gap-5 my-32">
-      <div className="banner-text w-1/2">
+      <div className="banner-text lg:w-1/2 flex flex-col items-center lg:items-start">
         <h2 className="font-bold text-4xl lg:text-7xl text-[#00095e] capitalize my-5">
           want to go for a tour?
           <br />
@@ -27,7 +27,7 @@ const HomBanner = () => {
           <FontAwesomeIcon icon={faUser} />
         </button>
       </div>
-      <div className="banner-img w-1/2 ">
+      <div className="banner-img lg:w-1/2 ">
         <img src={bannerImg} alt="" />
       </div>
     </div>

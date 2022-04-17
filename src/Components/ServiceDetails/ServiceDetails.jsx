@@ -44,11 +44,11 @@ const ServiceDetails = () => {
   console.log(tourDays);
   return (
     <div>
-      <div className="flex justify-between items-center gap-10">
-        <div className="w-1/2">
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
+        <div className="lg:w-1/2">
           <img src={image} alt="" className="rounded-lg shadow-xl" />
         </div>
-        <div className="w-1/2 flex flex-col justify-center items-start gap-5">
+        <div className="lg:w-1/2 flex flex-col justify-center items-start gap-5">
           <h2 className="text-5xl font-bold text-[#00095e] capitalize">
             {name}
           </h2>

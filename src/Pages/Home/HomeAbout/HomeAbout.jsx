@@ -7,13 +7,13 @@ import homeAboutImg from "../../../assets/image/homeAbout.png";
 const HomeAbout = () => {
   const navigate = useNavigate();
   return (
-    <div className="home-about-section flex justify-between items-center gap-14 my-32">
-      <div className="w-1/2">
+    <div className="home-about-section flex flex-col lg:flex-row justify-between items-center gap-14 my-32">
+      <div className="lg:w-1/2">
         <img src={homeAboutImg} alt="" className="w-full" />
       </div>
-      <div className="w-1/2">
+      <div className="lg:w-1/2 flex flex-col items-center lg:items-start">
         <p className="text-lg font-bold capitalize text-[#7ea0ff] my-16">
-          about us
+          about me
         </p>
         <h2 className="text-4xl font-bold text-[#00095e] ">
           Get ready for

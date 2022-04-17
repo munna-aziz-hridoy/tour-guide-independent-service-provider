@@ -60,7 +60,7 @@ const CheckOut = () => {
         <input
           type="number"
           name="number"
-          id="nmber"
+          id="number"
           placeholder="your phone number"
           className="w-full h-16 text-xl font-bold placeholder:text-lg placeholder:text-semibold placeholder:capitalize border-[#00095e] border-2 rounded-md shadow-md py-1 px-2 my-3"
         />
