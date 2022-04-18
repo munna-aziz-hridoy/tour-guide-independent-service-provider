@@ -105,7 +105,7 @@ const Footer = () => {
                 1700, gazipur sadar, gazipur
               </p>
               <p className="text-lg font-semibold text-slate-300 capitalize">
-                <span className="text-xl font-bold text-[#ffcc13]">
+                <span className="text-xl font-bold text-[#ffcc13] break-all">
                   email:{" "}
                 </span>
                 munna.aziz.hridoy@gmail.com
