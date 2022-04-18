@@ -1,25 +1,18 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGoogle,
-  faFacebookSquare,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
 import React from "react";
-
+import googleLogo from "../../assets/image/googleLogo.png";
+import fasebookLogo from "../../assets/image/facebookLogo.png";
+import githubLogo from "../../assets/image/githubLogo.png";
 const SocialLoginButton = () => {
   return (
     <div className="flex justify-center items-center gap-5 mx-auto my-5 p-5">
-      <button className="flex justify-center items-center gap-2 text-2xl font-bold text-[#00095e] capitalize py-4 px-8 rounded-lg shadow-md bg-[#ffcc13] hover:bg-[#00095e] hover:text-[#ffcc13]  duration-300 my-20">
-        <p>continue with google</p>
-        <FontAwesomeIcon icon={faGoogle} />
+      <button className="flex justify-center items-center gap-2   p-2 rounded-lg shadow-md bg-white border-2 border-white hover:border-[#00095e]  duration-300 my-5">
+        <img src={googleLogo} alt="" className="w-[40px] h-[40px]" />
       </button>
-      <button className="flex justify-center items-center gap-2 text-2xl font-bold text-[#00095e] capitalize py-4 px-8 rounded-lg shadow-md bg-[#ffcc13] hover:bg-[#00095e] hover:text-[#ffcc13]  duration-300  my-20">
-        <p>continue with github</p>
-        <FontAwesomeIcon icon={faGithub} />
+      <button className="flex justify-center items-center gap-2  p-2 rounded-lg shadow-md bg-white border-2 border-white hover:border-[#00095e]  duration-300  my-5">
+        <img src={fasebookLogo} alt="" className="w-[40px] h-[40px]" />
       </button>
-      <button className="flex justify-center items-center gap-2 text-2xl font-bold text-[#00095e] capitalize py-4 px-8 rounded-lg shadow-md bg-[#ffcc13] hover:bg-[#00095e] hover:text-[#ffcc13]  duration-300  my-20">
-        <p>continue with facebook</p>
-        <FontAwesomeIcon icon={faFacebookSquare} />
+      <button className="flex justify-center items-center gap-2 t  p-2 rounded-lg shadow-md bg-white border-2 border-white hover:border-[#00095e]  duration-300  my-5">
+        <img src={githubLogo} alt="" className="w-[40px] h-[40px]" />
       </button>
     </div>
   );

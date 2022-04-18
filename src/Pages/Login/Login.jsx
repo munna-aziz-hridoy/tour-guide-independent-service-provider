@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import SocialLoginButton from "../../Components/SocialLoginButton/SocialLoginButton";
 
 const Login = () => {
   const [errorText, setErrorText] = useState();
@@ -55,6 +56,7 @@ const Login = () => {
             Register
           </Link>
         </p>
+        <SocialLoginButton />
       </div>
     </div>
   );

@@ -50,7 +50,7 @@ const Header = () => {
                     </button>
                     <div
                       onClick={() => setShowUserDetails(!showUserDetals)}
-                      className="w-16 h-16 rounded-full p-1 bg-[#00095e] relative"
+                      className="w-16 h-16 rounded-full p-1 bg-[#00095e] relative cursor-pointer"
                     >
                       <img src={profile} alt="" className="rounded-full" />
                       {showUserDetals ? (
