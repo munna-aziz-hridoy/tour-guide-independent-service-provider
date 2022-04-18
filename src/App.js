@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
+import RequireAuth from "./Components/RequireAuth/RequireAuth";
 import ServiceDetails from "./Components/ServiceDetails/ServiceDetails";
 import About from "./Pages/About/About";
 import Blogs from "./Pages/Blogs/Blogs";
@@ -29,7 +30,14 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/checkout" element={<CheckOut />} />
+          <Route
+            path="/checkout"
+            element={
+              <RequireAuth>
+                <CheckOut />
+              </RequireAuth>
+            }
+          />
           <Route path="/thanks" element={<ThanksPage />} />
           <Route path="*" element={<NoRoutePage />} />
         </Routes>

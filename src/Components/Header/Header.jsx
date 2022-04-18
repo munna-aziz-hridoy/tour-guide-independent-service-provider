@@ -5,11 +5,15 @@ import profile from "../../assets/image/profile.png";
 import logo from "../../assets/image/logo.png";
 import CustomLink from "../CustomLink/CustomLink";
 import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Header = () => {
   const [showUserDetals, setShowUserDetails] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const user = true;
+  const [user] = useAuthState(auth);
+
   const menuItems = [
     { id: 1, itemName: "home", pathLink: "/" },
     { id: 2, itemName: "services", pathLink: "/services" },
@@ -17,8 +21,14 @@ const Header = () => {
     { id: 4, itemName: "about", pathLink: "/about" },
   ];
 
+  const profilePhoto = user?.photoURL || profile;
+
   const handleOpenMeu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleSignOut = () => {
+    signOut(auth);
   };
 
   return (
@@ -45,21 +55,24 @@ const Header = () => {
               <div className="h-full w-full bg-[#ffcc13] flex justify-center gap-5 items-center rounded-md shadow-md p-4">
                 {user ? (
                   <>
-                    <button className="text-[#00095e] font-bold text-xl capitalize">
+                    <button
+                      onClick={handleSignOut}
+                      className="text-[#00095e] font-bold text-xl capitalize"
+                    >
                       log out
                     </button>
                     <div
                       onClick={() => setShowUserDetails(!showUserDetals)}
                       className="w-16 h-16 rounded-full p-1 bg-[#00095e] relative cursor-pointer"
                     >
-                      <img src={profile} alt="" className="rounded-full" />
+                      <img src={profilePhoto} alt="" className="rounded-full" />
                       {showUserDetals ? (
                         <div className="absolute w-[280px] h-[130px] left-[-160px] top-[110px] bg-white shadow-lg rounded-xl p-5 flex flex-col justify-center items-center gap-4">
                           <h2 className="font-bold text-2xl text-[#00095e] capitalize">
-                            Name
+                            {user ? user.displayName : "No Names"}
                           </h2>
                           <p className="font-semibold text-lg text-[#00095e]">
-                            name@email.com
+                            {user ? user.email : "No Email"}
                           </p>
                         </div>
                       ) : (

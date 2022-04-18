@@ -1,14 +1,39 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import {
+  useAuthState,
+  useCreateUserWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
+import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import SocialLoginButton from "../../Components/SocialLoginButton/SocialLoginButton";
+import auth from "../../firebase.init";
 
 const Register = () => {
+  const [user] = useAuthState(auth);
+  const [createUserWithEmailAndPassword, userRegister, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
   const [errorText, setErrorText] = useState();
+  const navigate = useNavigate();
   const emailRef = useRef();
   const userNameRef = useRef();
   const passRef = useRef();
   const confirmPassRef = useRef();
+
+  let errorElement = "";
+  if (user) {
+    navigate("/");
+  }
+  if (error) {
+    errorElement = (
+      <p className="text-red-400 font-semibold capitalize">{error?.message}</p>
+    );
+  }
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
   const handleRegisterSubmit = (e) => {
+    errorElement = "";
     e.preventDefault();
     const userName = userNameRef.current?.value;
     const email = emailRef.current?.value;
@@ -18,7 +43,11 @@ const Register = () => {
     if (!email || !password || !confrimPassword || !userName) {
       return setErrorText("Please fill out all the field");
     }
-    console.log("register");
+    if (password !== confrimPassword) {
+      return setErrorText("Password did'nt match");
+    }
+    createUserWithEmailAndPassword(email, password);
+    console.log(error);
     setErrorText("");
   };
 
@@ -65,6 +94,7 @@ const Register = () => {
             className="w-full h-16 text-xl font-bold placeholder:text-lg placeholder:text-semibold placeholder:capitalize border-[#00095e] border-2 rounded-md shadow-md py-1 px-2 my-3"
           />
           <p className="text-red-400 font-semibold capitalize">{errorText}</p>
+          {errorElement}
           <input
             type="submit"
             value="register"

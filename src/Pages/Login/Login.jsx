@@ -1,12 +1,22 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import {
+  useAuthState,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import SocialLoginButton from "../../Components/SocialLoginButton/SocialLoginButton";
+import auth from "../../firebase.init";
 
 const Login = () => {
+  const [user, loading] = useAuthState(auth);
   const [errorText, setErrorText] = useState();
-
   const emailRef = useRef();
   const passRef = useRef();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLoginSubmit = (e) => {
     const email = emailRef.current?.value;
@@ -15,9 +25,16 @@ const Login = () => {
     if (!email || !password) {
       return setErrorText("Please fill out all the field");
     }
+
     setErrorText("");
-    console.log("login");
   };
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
+  if (user) {
+    navigate(from);
+  }
 
   return (
     <div>
