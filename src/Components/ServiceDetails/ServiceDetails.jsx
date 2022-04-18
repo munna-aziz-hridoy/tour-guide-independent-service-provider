@@ -47,7 +47,7 @@ const ServiceDetails = () => {
           </p>
           <button
             onClick={() => navigate("/checkout")}
-            className="flex justify-center items-center gap-2 text-2xl font-bold text-[#00095e] capitalize py-4 px-8 rounded-lg shadow-md bg-[#ffcc13] hover:bg-[#00095e] hover:text-[#ffcc13] my-5 duration-300 "
+            className="flex justify-center items-center gap-2 text-2xl font-bold text-[#00095e] capitalize py-4 px-8 rounded-lg shadow-md bg-[#ffcc13] hover:bg-[#00095e] hover:text-[#ffcc13] my-5 duration-300 cursor-pointer"
           >
             <p>Book now</p>
             <FontAwesomeIcon icon={faCartArrowDown} />

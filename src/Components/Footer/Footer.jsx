@@ -10,6 +10,8 @@ import logo from "../../assets/image/logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="py-12 bg-[#00095e]">
       <div className="container mx-auto">
@@ -118,6 +120,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <p className="text-center font-semibold text-slate-500 capitalize">
+        &#169; this project is created by munna{" "}
+        <span className="text-[#ffcc13]">{year}</span>
+      </p>
     </footer>
   );
 };
