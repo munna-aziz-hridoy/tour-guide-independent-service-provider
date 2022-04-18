@@ -6,7 +6,7 @@ Project name and detais.
 
 # Live site: [Tour guide]()
 
-## Features and Functionality:
+### Features and Functionality:
 
 - Home page:
 - Home Banner: Contain an image and `About Me` button to take to about page.
@@ -14,4 +14,15 @@ Project name and detais.
 - Services page: Services page take all the six service. Each service have two button. `Book Now` button take to the checkout page, `Details button` take to the details page of selected service.
 - Blogs page: Contain the Answer of given Questions.
 - About page: About page contain information about me.
-- Others: - You must have to login or register to book a service. - Login and register button deapear after login
+- Others: - You must have to login or register to book a service. Login and register button deapear after login
+
+### Tools and dependency:
+
+- React.
+- React router dom
+- Tailwind css
+- Firebase
+- React firebase hooks
+- Tostify
+
+## Thanks for visiting my site
