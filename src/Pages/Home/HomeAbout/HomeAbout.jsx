@@ -11,7 +11,7 @@ const HomeAbout = () => {
       <div className="lg:w-1/2">
         <img src={homeAboutImg} alt="" className="w-full" />
       </div>
-      <div className="lg:w-1/2 flex flex-col items-center lg:items-start">
+      <div className="lg:w-1/3 flex flex-col items-center lg:items-start">
         <p className="text-lg font-bold capitalize text-[#7ea0ff] my-16">
           about me
         </p>
@@ -19,7 +19,7 @@ const HomeAbout = () => {
           Get ready for
           <br /> real time adventure
         </h2>
-        <p className="text-xl font-semibold text-[#677f8b] my-6 w-1/2">
+        <p className="text-xl font-semibold text-[#677f8b] my-6 lg:w-1/2">
           Let's start your tour with me, I will guide you to the best places you
           may like. Want to know more about me? Explore here about me and my
           successfull tour guide history

@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import ServiceDetails from "./Components/ServiceDetails/ServiceDetails";
 import About from "./Pages/About/About";
@@ -29,6 +30,7 @@ function App() {
           <Route path="/thanks" element={<ThanksPage />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 }

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [showUserDetals, setShowUserDetails] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const user = false;
+  const user = true;
   const menuItems = [
     { id: 1, itemName: "home", pathLink: "/" },
     { id: 2, itemName: "services", pathLink: "/services" },

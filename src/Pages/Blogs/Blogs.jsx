@@ -39,14 +39,14 @@ const Blogs = () => {
           Wihtout Firebase we can implement authentication by handleing backend
           on our own. Also there are some alternative of firebase, like:
           <br />
-          <ul>
-            <li>Parse.</li>
-            <li>Back4App.</li>
-            <li>AWS Amplify.</li>
-            <li>Kuzzle.</li>
-            <li>Couchbase.</li>
-          </ul>
         </p>
+        <ul className="text-lg font-semibold text-gray-400">
+          <li>Parse.</li>
+          <li>Back4App.</li>
+          <li>AWS Amplify.</li>
+          <li>Kuzzle.</li>
+          <li>Couchbase.</li>
+        </ul>
       </div>
       <div className="p-6 rounded-lg shadow-lg my-16">
         <h3 className="text-2xl font-bold text-[#ffcc13]">
@@ -58,13 +58,13 @@ const Blogs = () => {
           </span>{" "}
           Without authentication firebase provide the below services:
           <br />
-          <ul>
-            <li>Firestore database</li>
-            <li>Realtime database</li>
-            <li>Storage</li>
-            <li>Hosting</li>
-          </ul>
         </p>
+        <ul className=" text-lg font-semibold text-gray-400">
+          <li>Firestore database</li>
+          <li>Realtime database</li>
+          <li>Storage</li>
+          <li>Hosting</li>
+        </ul>
       </div>
     </div>
   );

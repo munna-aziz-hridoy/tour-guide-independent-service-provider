@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 const CheckOut = () => {
   const navigate = useNavigate();
-
   const handleCheckoutSubmit = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
-    const name = e.target.name.value;
-    const from = e.target.from.value;
-    const to = e.target.to.value;
+    const email = e.target.email?.value;
+    const name = e.target.name?.value;
+    const from = e.target.from?.value;
+    const to = e.target.to?.value;
+
     if (email && name && from && to) {
       navigate("/thanks");
     }
@@ -21,7 +21,7 @@ const CheckOut = () => {
       </h2>
       <form
         onClick={handleCheckoutSubmit}
-        className="w-2/3 mx-auto rounded-xl shadow-xl p-5 pt-10"
+        className="lg:w-2/3 mx-auto rounded-xl shadow-xl p-5 pt-10"
       >
         <input
           required
@@ -64,6 +64,7 @@ const CheckOut = () => {
           placeholder="your phone number"
           className="w-full h-16 text-xl font-bold placeholder:text-lg placeholder:text-semibold placeholder:capitalize border-[#00095e] border-2 rounded-md shadow-md py-1 px-2 my-3"
         />
+
         <input
           type="submit"
           value="confirm order"
