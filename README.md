@@ -1,8 +1,8 @@
-# React Authentication Assignment
+### React Authentication Assignment
 
 Project name and detais.
 
-# Name: ### Tour Guide
+# Name: Tour Guide
 
 # Live site: [Tour guide]()
 

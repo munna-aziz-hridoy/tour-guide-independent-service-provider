@@ -8,6 +8,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import SocialLoginButton from "../../Components/SocialLoginButton/SocialLoginButton";
 import auth from "../../firebase.init";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [user, loading] = useAuthState(auth);
@@ -24,14 +26,14 @@ const Login = () => {
   const [errorText, setErrorText] = useState();
   const emailRef = useRef();
   const passRef = useRef();
-  const email = emailRef.current?.value;
-  const password = passRef.current?.value;
 
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
   const handleLoginSubmit = (e) => {
+    const email = emailRef.current?.value;
+    const password = passRef.current?.value;
     e.preventDefault();
     if (!email || !password) {
       return setErrorText("Please fill out all the field");
@@ -62,8 +64,11 @@ const Login = () => {
     navigate(from);
   }
 
-  const handleForgotPassword = () => {
-    sendPasswordResetEmail(email);
+  const handleForgotPassword = async () => {
+    const email = emailRef.current?.value;
+
+    await sendPasswordResetEmail(email);
+    toast("Password Reset Email sent");
   };
 
   return (
@@ -112,6 +117,7 @@ const Login = () => {
         </p>
         <SocialLoginButton />
       </div>
+      <ToastContainer />
     </div>
   );
 };
