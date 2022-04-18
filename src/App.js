@@ -8,6 +8,7 @@ import Blogs from "./Pages/Blogs/Blogs";
 import CheckOut from "./Pages/CheckOut/CheckOut";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
+import NoRoutePage from "./Pages/NoRouePage/NoRoutePage";
 import Register from "./Pages/Register/Register";
 import Services from "./Pages/Services/Services";
 import ThanksPage from "./Pages/ThanksPage/ThanksPage";
@@ -30,6 +31,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/checkout" element={<CheckOut />} />
           <Route path="/thanks" element={<ThanksPage />} />
+          <Route path="*" element={<NoRoutePage />} />
         </Routes>
       </div>
       <Footer />
