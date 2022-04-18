@@ -20,7 +20,7 @@ const Register = () => {
   const confirmPassRef = useRef();
 
   let errorElement = "";
-  if (user) {
+  if (user || userRegister) {
     navigate("/");
   }
   if (error) {

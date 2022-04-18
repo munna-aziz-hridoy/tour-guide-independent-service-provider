@@ -63,13 +63,13 @@ const Header = () => {
                     </button>
                     <div
                       onClick={() => setShowUserDetails(!showUserDetals)}
-                      className="w-16 h-16 rounded-full p-1 bg-[#00095e] relative cursor-pointer"
+                      className="w-16 h-16 rounded-full p-1 bg-[#00095e] relative cursor-pointer flex justify-center items-center"
                     >
                       <img src={profilePhoto} alt="" className="rounded-full" />
                       {showUserDetals ? (
                         <div className="absolute w-[280px] h-[130px] left-[-160px] top-[110px] bg-white shadow-lg rounded-xl p-5 flex flex-col justify-center items-center gap-4">
                           <h2 className="font-bold text-2xl text-[#00095e] capitalize">
-                            {user ? user.displayName : "No Names"}
+                            {user.displayName ? user?.displayName : "No Names"}
                           </h2>
                           <p className="font-semibold text-lg text-[#00095e]">
                             {user ? user.email : "No Email"}

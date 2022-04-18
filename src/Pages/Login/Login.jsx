@@ -10,6 +10,12 @@ import auth from "../../firebase.init";
 
 const Login = () => {
   const [user, loading] = useAuthState(auth);
+  const [
+    signInWithEmailAndPassword,
+    userFromEmail,
+    loadingFromEmail,
+    errorFromEmail,
+  ] = useSignInWithEmailAndPassword(auth);
   const [errorText, setErrorText] = useState();
   const emailRef = useRef();
   const passRef = useRef();
@@ -25,14 +31,22 @@ const Login = () => {
     if (!email || !password) {
       return setErrorText("Please fill out all the field");
     }
-
+    signInWithEmailAndPassword(email, password);
     setErrorText("");
   };
+  let errorElement = "";
+  if (errorFromEmail) {
+    errorElement = (
+      <p className="text-red-400 font-semibold capitalize">
+        {errorFromEmail?.message}
+      </p>
+    );
+  }
   if (loading) {
     return <LoadingSpinner />;
   }
 
-  if (user) {
+  if (user || userFromEmail) {
     navigate(from);
   }
 
@@ -61,6 +75,7 @@ const Login = () => {
             className="w-full h-16 text-xl font-bold placeholder:text-lg placeholder:text-semibold placeholder:capitalize border-[#00095e] border-2 rounded-md shadow-md py-1 px-2 my-3"
           />
           <p className="text-red-400 font-semibold capitalize">{errorText}</p>
+          {errorElement}
           <input
             type="submit"
             value="login"
