@@ -12,19 +12,10 @@ const Login = () => {
     const password = passRef.current?.value;
     e.preventDefault();
     if (!email || !password) {
-      return;
+      return setErrorText("Please fill out all the field");
     }
-    console.log("login");
-  };
-
-  const handleInputError = () => {
-    const email = emailRef.current?.value;
-    const password = passRef.current?.value;
-
     setErrorText("");
-    if (!email || !password) {
-      setErrorText("Please fill out all the field");
-    }
+    console.log("login");
   };
 
   return (
@@ -33,10 +24,9 @@ const Login = () => {
         login
       </h2>
       <div className="w-2/3 mx-auto rounded-xl shadow-xl p-5 pt-10">
-        <form onClick={handleLoginSubmit}>
+        <form onSubmit={handleLoginSubmit}>
           <input
             ref={emailRef}
-            required
             type="email"
             name="email"
             id="email"
@@ -54,7 +44,6 @@ const Login = () => {
           />
           <p className="text-red-400 font-semibold capitalize">{errorText}</p>
           <input
-            onClick={handleInputError}
             type="submit"
             value="login"
             className="flex justify-center items-center gap-2 text-2xl font-bold text-[#00095e] capitalize py-4 px-8 rounded-lg shadow-md bg-[#ffcc13] hover:bg-[#00095e] hover:text-[#ffcc13]  duration-300 w-full my-20"
