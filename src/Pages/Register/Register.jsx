@@ -11,7 +11,7 @@ import auth from "../../firebase.init";
 const Register = () => {
   const [user] = useAuthState(auth);
   const [createUserWithEmailAndPassword, userRegister, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [errorText, setErrorText] = useState();
   const navigate = useNavigate();
   const emailRef = useRef();
