@@ -66,9 +66,12 @@ const Login = () => {
 
   const handleForgotPassword = async () => {
     const email = emailRef.current?.value;
-
-    await sendPasswordResetEmail(email);
-    toast("Password Reset Email sent");
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Password Reset Email sent");
+    } else {
+      toast("Please input a email");
+    }
   };
 
   return (
@@ -105,7 +108,7 @@ const Login = () => {
         </form>
         <p
           onClick={handleForgotPassword}
-          className="text-xl font-bold text-red-900 capitalize my-4"
+          className="text-xl font-bold text-red-900 capitalize my-4 cursor-pointer"
         >
           forgot password?
         </p>

@@ -8,6 +8,8 @@ import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import SocialLoginButton from "../../Components/SocialLoginButton/SocialLoginButton";
 import auth from "../../firebase.init";
 
+import "react-toastify/dist/ReactToastify.css";
+
 const Register = () => {
   const [user] = useAuthState(auth);
   const [createUserWithEmailAndPassword, userRegister, loading, error] =
@@ -47,8 +49,6 @@ const Register = () => {
       return setErrorText("Password did'nt match");
     }
     createUserWithEmailAndPassword(email, password);
-    console.log(error);
-    setErrorText("");
   };
 
   return (
