@@ -1,12 +1,16 @@
-# Getting Started with Create React App
+# React Authentication Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project name and detais.
 
-## Available Scripts
+# Name: ### Tour Guide
 
-In the project directory, you can run:
+# Live site: [Tour guide]()
 
-### `yarn start`
+## Features and Functionality:
+
+-Login and Registration System
+-Diffrent Services
+-Showed only 3 services in the home page
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
