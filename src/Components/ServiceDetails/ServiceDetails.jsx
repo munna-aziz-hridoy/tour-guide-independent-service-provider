@@ -6,13 +6,11 @@ import useServices from "../../hooks/useServices";
 
 const ServiceDetails = () => {
   const navigate = useNavigate();
-  const { homeServicesUrl } = useParams();
+  const { servicesUrl } = useParams();
   const [services] = useServices();
-  const selectedId = parseFloat(homeServicesUrl);
+  const selectedId = parseFloat(servicesUrl);
 
-  const selectedService = services.find(
-    async (service) => (await service.id) === selectedId
-  );
+  const selectedService = services.find((service) => service.id === selectedId);
 
   if (!selectedService) {
     <div className="w-full h-[50vh] flex justify-center items-center">
@@ -41,7 +39,7 @@ const ServiceDetails = () => {
   for (const day in description) {
     tourDays.push(day);
   }
-  console.log(tourDays);
+
   return (
     <div>
       <div className="flex flex-col lg:flex-row justify-between items-center gap-10">

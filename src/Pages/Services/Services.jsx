@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+
 import ServicesContainer from "../../Components/ServicesContainer/ServicesContainer";
 import useServices from "../../hooks/useServices";
 
@@ -14,7 +14,6 @@ const Services = () => {
         tour plans
       </h2>
       <ServicesContainer services={services} />
-      <Outlet />
     </div>
   );
 };

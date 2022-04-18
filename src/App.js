@@ -19,9 +19,11 @@ function App() {
       <div className="container mx-auto my-20">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:homeServicesUrl" element={<ServiceDetails />} />
           <Route path="/services" element={<Services />}></Route>
-          <Route path="services/:servicesUrl" element={<ServiceDetails />} />
+          <Route
+            path="/servicesDetails/:servicesUrl"
+            element={<ServiceDetails />}
+          />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />

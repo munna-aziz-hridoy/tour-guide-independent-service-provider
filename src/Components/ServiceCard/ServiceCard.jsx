@@ -41,7 +41,7 @@ const ServiceCard = ({ service }) => {
           <FontAwesomeIcon icon={faCartArrowDown} />
         </button>
         <button
-          onClick={() => navigate(`${id}`)}
+          onClick={() => navigate(`/servicesDetails/${id}`)}
           className="flex justify-center items-center gap-2 text-2xl font-bold border-[#00095e] border-2 text-[#00095e] capitalize py-4 px-8 rounded-lg shadow-md hover:bg-[#00095e] hover:text-[#ffcc13] my-7 duration-300 w-full"
         >
           <p>details</p>
